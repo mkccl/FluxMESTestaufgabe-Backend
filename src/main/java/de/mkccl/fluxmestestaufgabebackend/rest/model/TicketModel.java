@@ -40,7 +40,11 @@ public class TicketModel {
         this.title = title;
         this.status = StatusEnum.NEW.value;
 
-        this.description = Objects.requireNonNullElse(description, "");
+        if (null == description) {
+            this.description = "";
+        } else {
+            this.description = description;
+        }
 
     }
 
