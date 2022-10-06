@@ -4,7 +4,6 @@ import de.mkccl.fluxmestestaufgabebackend.rest.dto.TicketDto;
 import de.mkccl.fluxmestestaufgabebackend.rest.model.PriorityEnum;
 import de.mkccl.fluxmestestaufgabebackend.rest.model.StatusEnum;
 import de.mkccl.fluxmestestaufgabebackend.rest.model.TicketModel;
-import de.mkccl.fluxmestestaufgabebackend.rest.repository.TicketRepository;
 import de.mkccl.fluxmestestaufgabebackend.rest.service.MockService;
 import de.mkccl.fluxmestestaufgabebackend.rest.service.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +11,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "https://fluxmestestappbackend.herokuapp.com"})
 @RestController
 @RequestMapping("api/ticket")
 public class TicketController {
