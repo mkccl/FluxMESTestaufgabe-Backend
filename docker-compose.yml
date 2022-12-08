@@ -2,8 +2,3 @@ version: '2.2'
 services:
   testaufgabe:
     image: derccl/flux_mes_testaufgabe_backend:latest
-    networks:
-      - spring-cloud-network
-networks:
-  spring-cloud-network:
-    driver: traefik_default
