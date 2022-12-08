@@ -39,6 +39,10 @@ node {
         echo "Deploying..."
     }
     
+    stage('Build image') {
+       dockerImage = docker.build("ccl/fluxmestestaufgabebackend:latest")
+    }
+    
     stage('Push image') {
         withDockerRegistry([ credentialsId: "878c643b-5e11-45e5-bbac-2727982ea3a1", url: "" ]) {
         dockerImage.push()
