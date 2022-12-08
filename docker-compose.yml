@@ -2,8 +2,6 @@ version: '2.2'
 services:
   testaufgabe:
     image: derccl/flux_mes_testaufgabe_backend:latest
-    build:
-      dockerfile: Dockerfile
     networks:
       - spring-cloud-network
 networks:
