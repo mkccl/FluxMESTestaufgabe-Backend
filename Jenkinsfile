@@ -26,7 +26,7 @@ node {
   
     stage('Build') {
         milestone()
-        sh 'maven install'
+        sh 'mvn install'
     }
 
     stage('Archive') {
