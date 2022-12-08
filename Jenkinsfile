@@ -43,11 +43,15 @@ node {
        dockerImage = docker.build("derccl/flux_mes_testaufgabe_backend:latest")
     }
     
-    stage('Push image') {
-        withDockerRegistry([ credentialsId: "31391702-340f-4bef-a7fe-19420e3c03f6", url: "https://registry.hub.docker.com/repository/docker/derccl/flux_mes_testaufgabe_backend" ]) {
-        dockerImage.tag()
-        dockerImage.push()
-        }
+    stage('Stop old image') {
+        echo "Stopping old image"
+        sh 'docker container stop flux_mes_testaufgabe_backend'
+        sh 'docker container rm flux_mes_testaufgabe_backend'
+    }
+    
+    stage('Start new image') {
+        echo "Stopping old image"
+        sh 'docker run --name flux_mes_testaufgabe_backend -p 8080:8081 -itd derccl/flux_mes_testaufgabe_backend:latest'
     }
     
 }
