@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
-@CrossOrigin("https://testaufgabe.vercel.app")
+@CrossOrigin(origins = {"https://testaufgabe.vercel.app", "http://localhost:4200"})
 @RestController
 @RequestMapping("api/ticket")
 public class TicketController {
