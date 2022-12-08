@@ -56,7 +56,6 @@ node {
     }
     
     stage('Start new image') {
-        echo "Stopping old image"
         // -p 8080:8081
         //sh 'cd /var/lib/jenkins/workspace/FluxMesTestAufgabe-Backend/'
         sh 'docker-compose up'

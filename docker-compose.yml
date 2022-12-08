@@ -3,7 +3,6 @@ services:
   message-server:
     container_name: flux_mes_testaufgabe_backend
     build:
-      context: flux_mes_testaufgabe_backend
       dockerfile: Dockerfile
     image: derccl/flux_mes_testaufgabe_backend:latest
     networks:
