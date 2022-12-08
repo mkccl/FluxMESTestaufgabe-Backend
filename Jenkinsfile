@@ -31,7 +31,7 @@ node {
 
     stage('Archive') {
         sh 'tar -cvzf FluxMESTestaufgabe.tar.gz --strip-components=1 target/FluxMESTestaufgabe-Backend-0.0.1-SNAPSHOT.jar'
-        archive 'FluxMESTestaufgabe.tar.gz'
+        //archive 'FluxMESTestaufgabe.tar.gz'
     }
 
     stage('Deploy') {
