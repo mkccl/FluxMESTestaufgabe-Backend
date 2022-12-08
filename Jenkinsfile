@@ -44,7 +44,7 @@ node {
     }
     
     stage('Push image') {
-        withDockerRegistry([ credentialsId: "878c643b-5e11-45e5-bbac-2727982ea3a1", url: "" ]) {
+        withDockerRegistry([ credentialsId: "b431b5f7-585c-4369-ab93-af5d7348d258", url: "" ]) {
         dockerImage.push()
         }
     }
