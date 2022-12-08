@@ -1,4 +1,4 @@
-version: '1'
+version: '2.2'
 services:
   message-server:
     container_name: flux_mes_testaufgabe_backend
