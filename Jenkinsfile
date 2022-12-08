@@ -57,7 +57,7 @@ node {
     
     stage('Start new image') {
         echo "Stopping old image"
-        sh 'docker run --name flux_mes_testaufgabe_backend -p 8080:8081 -itd derccl/flux_mes_testaufgabe_backend:latest'
+        sh 'docker run --name flux_mes_testaufgabe_backend -itd derccl/flux_mes_testaufgabe_backend:latest'
     }
     
 }
