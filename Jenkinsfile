@@ -59,7 +59,7 @@ node {
         echo "Stopping old image"
         // -p 8080:8081
         sh 'cd /var/lib/jenkins/workspace/FluxMesTestAufgabe-Backend/'
-        sh 'docker compose up'
+        sh 'docker-compose up'
         //sh 'docker ps'
         //sh 'docker run --name flux_mes_testaufgabe_backend -itd derccl/flux_mes_testaufgabe_backend:latest --l traefik.enable=true --l traefik.http.routers.unbreakablev.entrypoints=web, websecure --l traefik.http.routers.unbreakablev.tls=true --l traefik.http.routers.unbreakablev.tls.certresolver=production'
     }
