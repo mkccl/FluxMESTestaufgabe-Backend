@@ -26,7 +26,7 @@ node {
   
     stage('Build') {
         milestone()
-        sh 'maven build'
+        sh 'mvn clean deploy'
     }
 
     stage('Archive') {
