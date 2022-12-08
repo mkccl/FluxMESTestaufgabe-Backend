@@ -44,7 +44,7 @@ node {
     }
    
     stage('Push image') {
-        withDockerRegistry([ credentialsId: "b431b5f7-585c-4369-ab93-af5d7348d258", url: "https://hub.docker.com/repository/docker/derccl/flux_mes_testaufgabe_backend" ]) {
+        withDockerRegistry([ credentialsId: "31391702-340f-4bef-a7fe-19420e3c03f6", url: "https://hub.docker.com/repository/docker/derccl/flux_mes_testaufgabe_backend" ]) {
         dockerImage.push()
         }
     }
