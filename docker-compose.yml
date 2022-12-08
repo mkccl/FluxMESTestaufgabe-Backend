@@ -2,3 +2,12 @@ version: '2.2'
 services:
   testaufgabe:
     image: derccl/flux_mes_testaufgabe_backend:latest
+    restart: always
+    labels:
+      traefik.enable: true
+      traefik.http.routers.testaufgabe.entrypoints: web, websecure
+      traefik.http.routers.vscode.rule: Host(`vscode.mkccl.de`)
+      traefik.http.routers.vscode.tls: true
+      traefik.http.routers.vscode.tls.certresolver: production
+    networks:
+       - traefik_default
