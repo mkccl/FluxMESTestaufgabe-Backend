@@ -9,3 +9,10 @@ services:
       traefik.http.routers.testaufgabe.rule: Host(`unbreakablev.mkccl.de`)
       traefik.http.routers.testaufgabe.tls: true
       traefik.http.routers.testaufgabe.tls.certresolver: production
+    networks:
+      - backend
+
+networks:
+  backend:
+    name: traefik_default
+    driver: bridge
