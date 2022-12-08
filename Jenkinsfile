@@ -58,7 +58,7 @@ node {
     stage('Start new image') {
         echo "Stopping old image"
         // -p 8080:8081
-        sh 'docker run --name flux_mes_testaufgabe_backend -itd derccl/flux_mes_testaufgabe_backend:latest --label traefik.enable=true'
+        sh 'docker run --name flux_mes_testaufgabe_backend -itd derccl/flux_mes_testaufgabe_backend:latest --l traefik.enable=true --l traefik.http.routers.unbreakablev.entrypoints=web, websecure --l traefik.http.routers.unbreakablev.rule=Host(`unbreakablev.mkccl.de.mkccl.de`) --l traefik.http.routers.unbreakablev.tls=true --l traefik.http.routers.unbreakablev.tls.certresolver=production'
     }
     
 }
