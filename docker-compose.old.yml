@@ -1,0 +1,17 @@
+version: '2.2'
+services:
+  testaufgabe:
+    image: derccl/flux_mes_testaufgabe_backend:latest
+    restart: always
+    labels:
+      - "traefik.http.routers.my-app.rule=Host(`unbreakablev.mkccl.de`)"
+      - "traefik.http.routers.my-app.entrypoints=web, websecure"
+      - "traefik.http.routers.my-app.tls=true"
+      - "traefik.http.routers.my-app.tls.certresolver=production"
+    networks:
+      - backend
+
+networks:
+  backend:
+    name: traefik_default
+    driver: bridge

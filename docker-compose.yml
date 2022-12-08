@@ -1,17 +1,28 @@
-version: '2.2'
+version: "3.3"
 services:
-  testaufgabe:
+  app:
+    container_name: FluxMesTestAufgabeBackend
     image: derccl/flux_mes_testaufgabe_backend:latest
     restart: always
-    labels:
-      - "traefik.http.routers.my-app.rule=Host(`unbreakablev.mkccl.de`)"
-      - "traefik.http.routers.my-app.entrypoints=web, websecure"
-      - "traefik.http.routers.my-app.tls=true"
-      - "traefik.http.routers.my-app.tls.certresolver=production"
-    networks:
-      - backend
-
-networks:
-  backend:
-    name: traefik_default
-    driver: bridge
+    ports:
+      - "8080"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo_db
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
+  nginx:
+    container_name: nginx
+    image: nginx
+    restart: always
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./html:/usr/share/nginx/html
+    ports:
+      - "80:80"
+    links:
+      - app
