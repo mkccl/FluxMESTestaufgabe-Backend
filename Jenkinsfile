@@ -44,9 +44,9 @@ node {
     }
     
     stage('Stop old image') {
-        echo "Stopping old image"
         script {
           try {
+              echo "Stopping old image"
               sh 'docker container stop flux_mes_testaufgabe_backend'
               sh 'docker container rm flux_mes_testaufgabe_backend'
           } catch (Exception e) {
