@@ -9,5 +9,3 @@ services:
       traefik.http.routers.vscode.rule: Host(`vscode.mkccl.de`)
       traefik.http.routers.vscode.tls: true
       traefik.http.routers.vscode.tls.certresolver: production
-    networks:
-       - traefik_default
