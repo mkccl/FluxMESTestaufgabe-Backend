@@ -5,6 +5,8 @@ services:
     restart: always
     networks:
       - backend
+    ports:
+      - "8080"
 
 networks:
   backend:
