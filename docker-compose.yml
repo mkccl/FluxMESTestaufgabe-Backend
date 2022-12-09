@@ -3,16 +3,10 @@ services:
   testaufgabe:
     image: derccl/flux_mes_testaufgabe_backend:latest
     restart: always
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.my-app.rule=Host(`unbreakablev.mkccl.de`)"
-      - "traefik.http.routers.my-app.entrypoints=apisecure"
-      - "traefik.http.routers.my-app.tls=true"
-      - "traefik.http.routers.my-app.tls.certresolver=production"
     networks:
       - backend
     ports:
-      - "8008"
+      - "80:8080"
 
 networks:
   backend:
