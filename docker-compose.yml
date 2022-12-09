@@ -3,12 +3,5 @@ services:
   testaufgabe:
     image: derccl/flux_mes_testaufgabe_backend:latest
     restart: always
-    networks:
-      - backend
     ports:
       - "80:8080"
-
-networks:
-  backend:
-    name: traefik_default
-    driver: bridge
