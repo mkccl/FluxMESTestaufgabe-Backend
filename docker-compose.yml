@@ -6,7 +6,7 @@ services:
     networks:
       - backend
     ports:
-      - "8080"
+      - "8083"
 
 networks:
   backend:
